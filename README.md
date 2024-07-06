@@ -1,13 +1,13 @@
 # Smart CCTV
 # Introduction
-CCTV (Closed-circuit television) is a remote monitoring system using cameras (video surveillance).\
+**CCTV (Closed-circuit television)** is a remote monitoring system using cameras **(video surveillance)**.\
 The broadcasts are usually transmitted to a limited (closed) number of monitors, unlike “regular” TV,\
 which is broadcast to the public at large.\
 CCTV networks are commonly used to detect and deter criminal activities, and record traffic infractions, but they have other uses,\
 such as disaster management, medical monitoring and diagnosis, city and community street monitoring, behavioral research etc.
 
 The idea of "Smart" CCTV can be implemented using Computer Vision techniques and algorithms,\
-such as object detection and human behavior recognition (HAR).\
+such as **object detection** and **human behavior recognition (HAR)**.\
 This could be done in real-time monitoring or in post-processing, using recorded data from cameras.
 
 This project implements "Smart CCTV" system, with object detection and HAR using OpenCV.
@@ -26,24 +26,24 @@ This project implements "Smart CCTV" system, with object detection and HAR using
         └── data_format_converter.py        => converting video stream to images and vice versa
         └── play_sequence.py                => video-streaming for frames sequence (i.e after object detection)
 ```
-The "Smart CCTV" system functions as follows:
-* On input data (images), creating foreground model using background subtraction algorithm, utilizing MOG,\
+The **"Smart CCTV"** system functions as follows:
+* On input data (images), creating foreground model using background subtraction algorithm, utilizing **MOG**,\
   (Mixture Of Gaussians).
-* Performing noise filtering on frame with masked background, using morphological opening.
-* Running connected components labeling (Spaghetti), filtering under defined threshold.
+* Performing noise filtering on frame with masked background, using **morphological opening**.
+* Running **connected components labeling** (Spaghetti), filtering under defined threshold.
 * Filtering only the interesting frames, i.e where the change/action in the scene happens,\
   also with minimal number of frames, required to track the scene change (according to scene),\
   thus, reducing insignificant details and processed data amount.
 
-Then, the system performs object detection and HAR in real-time or in post-processing state.
+Then, the system performs object detection and **HAR** in real-time or in post-processing state.
 
-For object detection, the model used is Tiny YOLOv3 (with reduced number of convolutional layers).\
+For object detection, the model used is **Tiny YOLOv3** (with reduced number of convolutional layers).\
 ![](https://github.com/DMTRBor/smart_cctv/blob/master/utils/od.png)
 
-For HAR, CNN Resnet34 architecture is used, trained on kinetic dataset, which includes 400 classes of activities.\
+For HAR, **CNN Resnet34** architecture is used, trained on kinetic dataset, which includes **400 classes** of activities.\
 ![](https://github.com/DMTRBor/smart_cctv/blob/master/utils/har.png)
 
-To run HAR, the following commands supported:
+To run **HAR**, the following commands supported:
 For video-stream processing:
 ```
 cd human_activity_recognition

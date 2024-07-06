@@ -38,10 +38,10 @@ The "Smart CCTV" system functions as follows:
 Then, the system performs object detection and HAR in real-time or in post-processing state.
 
 For object detection, the model used is Tiny YOLOv3 (with reduced number of convolutional layers).\
-![alt text](https://github.com/DMTRBor/object_tracker/blob/master/utils/od.png)
+![](https://github.com/DMTRBor/object_tracker/blob/master/utils/od.png)
 
 For HAR, CNN Resnet34 architecture is used, trained on kinetic dataset, which includes 400 classes of activities.\
-![alt text](https://github.com/DMTRBor/object_tracker/blob/master/utils/har.png)
+![](https://github.com/DMTRBor/object_tracker/blob/master/utils/har.png)
 
 To run HAR, the following commands supported:
 For video-stream processing:
